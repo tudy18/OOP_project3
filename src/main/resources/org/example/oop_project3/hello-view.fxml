@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.oop_project3.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.HelloController">
+   <children>
+      <Button layoutX="285.0" layoutY="14.0" mnemonicParsing="false" onAction="#up" text="Up" textAlignment="CENTER" />
+      <Button layoutX="14.0" layoutY="188.0" mnemonicParsing="false" onAction="#left" text="Left" textAlignment="CENTER" />
+      <Button layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#down" text="Down" textAlignment="CENTER" />
+      <Button layoutX="541.0" layoutY="188.0" mnemonicParsing="false" onAction="#right" text="Right" textAlignment="CENTER" />
+      <Circle fx:id="circle" fill="DODGERBLUE" layoutX="300.0" layoutY="201.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
