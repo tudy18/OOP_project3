@@ -12,4 +12,6 @@ module org.example.oop_project3 {
 
     opens org.example.oop_project3 to javafx.fxml;
     exports org.example.oop_project3;
+    exports org.example.oop_project3.models;
+    opens org.example.oop_project3.models to javafx.fxml;
 }

@@ -15,6 +15,7 @@ public class HelloController {
 
     public void down(ActionEvent e){
         circle.setCenterY(y++);
+
     }
 
     public void left(ActionEvent e){

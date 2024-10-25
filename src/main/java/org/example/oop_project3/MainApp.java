@@ -19,12 +19,12 @@ public class MainApp extends Application {
 
     }
 
-        @Override
-        public void start(Stage primaryStage) throws Exception {
-            Parent root = FXMLLoader.load(getClass().getResource("/org/example/oop_project3/hello-view.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setTitle("JavaFX Application");
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        }
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/org/example/oop_project3/hello-view.fxml"));
+        Scene scene = new Scene(root);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
+}
