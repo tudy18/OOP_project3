@@ -85,7 +85,7 @@ public class HomeController {
             if (empty || movie == null) {
                 setGraphic(null);
             } else {
-               // imageView.setImage(new Image(movie.getImagePath()));
+                // imageView.setImage(new Image(movie.getImagePath()));
                 titleLabel.setText(movie.getTitle());
                 genreLabel.setText("Genre: " + movie.getGenre());
                 releaseDateLabel.setText("Release Date: " + movie.getReleaseDate());

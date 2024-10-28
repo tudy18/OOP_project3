@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c299a17-e2ae-40cf-a3cd-a883cb96d5d6" name="Changes" comment="JavaFx SceneBuilder Test&#10;Created dbConnection class&#10;Tested HelloController">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/login-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="a02d12f6-a13b-44de-a76c-61aab0137632" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +31,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/tudy18/OOP_project3.git&quot;,
-    &quot;accountId&quot;: &quot;f77a4232-a94e-47d1-b845-bbe3fdbb6890&quot;
+    &quot;accountId&quot;: &quot;a1644c21-e42e-4820-b160-df1345b330d2&quot;
   }
 }</component>
   <component name="MavenImportPreferences">
@@ -61,37 +52,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.JavaFX.executor": "Run",
-    "Application.MainApp.executor": "Run",
-    "Application.dbConnection.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
-    "vue.rearranger.settings.migration": "true"
+    "git-widget-placeholder": "Merging master"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="JavaFX" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.example.oop_project3.MainApp" />
-      <module name="OOP_Project3" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -111,7 +74,7 @@
       <workItem from="1729696156186" duration="65000" />
       <workItem from="1729785456461" duration="60000" />
       <workItem from="1729857212916" duration="667000" />
-      <workItem from="1730117110483" duration="3583000" />
+      <workItem from="1730117110483" duration="9676000" />
     </task>
     <task id="LOCAL-00001" summary="JavaFx SceneBuilder Test&#10;Created dbConnection class&#10;Tested HelloController">
       <option name="closed" value="true" />
@@ -121,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729060558294</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="View layout">
+      <option name="closed" value="true" />
+      <created>1730122565572</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730122565572</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,7 +111,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JavaFx SceneBuilder Test&#10;Created dbConnection class&#10;Tested HelloController" />
-    <option name="LAST_COMMIT_MESSAGE" value="JavaFx SceneBuilder Test&#10;Created dbConnection class&#10;Tested HelloController" />
+    <MESSAGE value="View layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="View layout" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

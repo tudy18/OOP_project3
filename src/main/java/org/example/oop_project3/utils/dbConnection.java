@@ -1,4 +1,4 @@
-package org.example.oop_project3;
+package org.example.oop_project3.utils;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
