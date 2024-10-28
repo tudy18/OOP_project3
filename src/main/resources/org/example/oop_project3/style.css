@@ -1,0 +1,51 @@
+.header {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-padding: 10;
+    -fx-alignment: center;
+}
+
+.movie-list {
+    -fx-background-color: #f3f3f3;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5px;
+}
+.seat-grid {
+    -fx-background-color: #ffffff;
+    -fx-padding: 10px;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1px;
+}
+
+.reserve-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+}
+.confirmation-box {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #eee;
+    -fx-border-radius: 5px;
+    -fx-padding: 20px;
+}
+
+.movie-info, .seat-info {
+    -fx-font-size: 18px;
+    -fx-text-fill: #333;
+}
+
+.confirm-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+}
+
+.cancel-button {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+}
