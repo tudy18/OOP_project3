@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.oop_project3.ReservationConfirmation"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="">
+    <top>
+        <HBox style="-fx-background-color: #D32F2F; -fx-padding: 15;" alignment="CENTER">
+            <Label text="Confirm Your Reservation" style="-fx-font-size: 24px; -fx-text-fill: white;" />
+        </HBox>
+    </top>
 
-</AnchorPane>
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Label text="Movie Title: Your Selected Movie" style="-fx-font-size: 18px; -fx-text-fill: #333333;" />
+            <Label text="Selected Seats: A1, A2, A3" style="-fx-text-fill: gray;" />
+            <Label text="Date and Time: 24th Oct 2023, 7:00 PM" style="-fx-text-fill: gray;" />
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 15;">
+            <Button text="Cancel" style="-fx-background-color: gray; -fx-text-fill: white;" onAction="#handleCancel" />
+            <Button text="Confirm Reservation" style="-fx-background-color: #D32F2F; -fx-text-fill: white;" onAction="#handleConfirmReservation" />
+        </HBox>
+    </bottom>
+</BorderPane>
