@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c299a17-e2ae-40cf-a3cd-a883cb96d5d6" name="Changes" comment="JavaFx SceneBuilder Test&#10;Created dbConnection class&#10;Tested HelloController">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SeatSelectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/SeatSelectionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
