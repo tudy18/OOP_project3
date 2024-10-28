@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.collections.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.oop_project3.Home"
-            prefHeight="400.0" prefWidth="600.0">
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.controllers.HomeController">
+    <VBox>
 
+        <HBox spacing="10">
+            <Button fx:id="recommendationsButton" text="Recomandări" styleClass="nav-button active" />
+            <Button fx:id="programButton" text="Program" styleClass="nav-button" />
+            <Button fx:id="comingSoonButton" text="În curând" styleClass="nav-button" />
+        </HBox>
+
+
+        <HBox spacing="10">
+            <ComboBox fx:id="locationComboBox">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Târgu Mureș"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <ComboBox fx:id="dateComboBox">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Azi"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </HBox>
+
+        <ListView fx:id="movieListView" prefHeight="600" prefWidth="800">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Movie 1"/>
+                    <String fx:value="Movie 2"/>
+                    <String fx:value="Movie 3"/>
+                    <String fx:value="Movie 4"/>
+                    <String fx:value="Movie 5"/>
+                </FXCollections>
+            </items>
+        </ListView>
+    </VBox>
 </AnchorPane>
