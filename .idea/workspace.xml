@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a02d12f6-a13b-44de-a76c-61aab0137632" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/CheckOut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/SelectTickets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/checkOut.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/selectTickets.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="31d362bc-c0a2-4784-8f5e-e4e77f10d6f9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +52,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "Merging master"
   }
 }]]></component>
   <component name="RecentsManager">
