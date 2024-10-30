@@ -1,97 +1,77 @@
+
 package org.example.oop_project3.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.util.Callback;
-import org.example.oop_project3.models.Movie;
+import org.example.oop_project3.models.MovieDetails;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 public class HomeController {
-
     @FXML
-    private ListView<Movie> movieListView;
+    private ListView<MovieDetails> movieListView;
+    @FXML
+    private Button addMovieButton;
 
-    public HomeController(Stage stage) {
-        initialize(stage);
+    private ObservableList<MovieDetails> movieList;
+
+    public HomeController() {
+        movieList = FXCollections.observableArrayList();
     }
 
-    private void initialize(Stage stage) {
-        BorderPane root = new BorderPane();
-        HBox searchBar = new HBox();
-        searchBar.setStyle("-fx-background-color: #D32F2F; -fx-padding: 15;");
+    public void loadHomeView(Stage primaryStage) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/home.fxml"));
+        loader.setController(this);
+        Parent root = loader.load();
 
-        javafx.scene.control.TextField searchField = new javafx.scene.control.TextField();
-        searchField.setPromptText("Search for movies...");
-        searchField.setStyle("-fx-max-width: 300; -fx-padding: 10; -fx-background-radius: 10px; -fx-background-color: #EEEEEE; -fx-text-fill: gray;");
+        loadSampleMovies();
+        movieListView.setItems(movieList);
+        movieListView.setCellFactory(param -> new MovieCell());
 
-        Button searchButton = new Button("Search");
-        searchButton.setStyle("-fx-background-color: #D32F2F; -fx-text-fill: white;");
+        setupListViewActions(primaryStage);
 
-        searchBar.getChildren().addAll(searchField, searchButton);
-        root.setTop(searchBar);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
-        movieListView = new ListView<>();
-        movieListView.setCellFactory(new Callback<ListView<Movie>, ListCell<Movie>>() {
-            @Override
-            public ListCell<Movie> call(ListView<Movie> listView) {
-                return new MovieListCell();
+    private void loadSampleMovies() {
+        List<MovieDetails> movies = Arrays.asList(
+                new MovieDetails("Inception", "Sci-Fi", "2010", "/images/inception.jpg", "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.", 120, "2D"),
+                new MovieDetails("The Matrix", "Action", "1999", "/images/the_matrix.jpg", "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.", 150, "2D"),
+                new MovieDetails("Interstellar", "Sci-Fi", "2014", "/images/interstellar.jpg", "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.", 169, "3D"),
+                new MovieDetails("The Godfather", "Crime", "1972", "/images/the_godfather.jpg", "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.", 175, "2D"),
+                new MovieDetails("Pulp Fiction", "Crime", "1994", "/images/pulp_fiction.jpg", "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.", 154, "2D")
+        );
+
+        movieList.addAll(movies);
+    }
+
+    private void setupListViewActions(Stage primaryStage) {
+        movieListView.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                MovieDetails selectedMovie = movieListView.getSelectionModel().getSelectedItem();
+                if (selectedMovie != null) {
+                    loadMovieDetailsView(primaryStage, selectedMovie);
+                }
             }
         });
-
-        Movie movie1 = new Movie("Inception", "Sci-Fi", "2010", "inception.jpg", "no description yet");
-        Movie movie2 = new Movie("The Matrix", "Action", "1999", "the matrix", "no description yet");
-        movieListView.getItems().addAll(movie1, movie2);
-
-        VBox vbox = new VBox(movieListView);
-        vbox.setStyle("-fx-padding: 20;");
-        root.setCenter(vbox);
-
-        Scene scene = new Scene(root, 665, 481);
-        stage.setScene(scene);
-        stage.show();
     }
 
-    private static class MovieListCell extends ListCell<Movie> {
-        private final VBox vbox = new VBox();
-        private final ImageView imageView = new ImageView();
-        private final Label titleLabel = new Label();
-        private final Label genreLabel = new Label();
-        private final Label releaseDateLabel = new Label();
+    private void loadMovieDetailsView(Stage primaryStage, MovieDetails selectedMovie) {
+        MovieDetailsController movieDetailsController = new MovieDetailsController(selectedMovie, primaryStage);
+        movieDetailsController.loadFXML();
+    }
 
-        public MovieListCell() {
-            imageView.setFitWidth(100);
-            imageView.setFitHeight(150);
-            titleLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
-            genreLabel.setStyle("-fx-font-size: 12px; -fx-text-fill: #666666;");
-            releaseDateLabel.setStyle("-fx-font-size: 12px; -fx-text-fill: #666666;");
-
-            vbox.setSpacing(5);
-            vbox.getChildren().addAll(imageView, titleLabel, genreLabel, releaseDateLabel);
-        }
-
-        @Override
-        protected void updateItem(Movie movie, boolean empty) {
-            super.updateItem(movie, empty);
-
-            if (empty || movie == null) {
-                setGraphic(null);
-            } else {
-                // imageView.setImage(new Image(movie.getImagePath()));
-                titleLabel.setText(movie.getTitle());
-                genreLabel.setText("Genre: " + movie.getGenre());
-                releaseDateLabel.setText("Release Date: " + movie.getReleaseDate());
-
-                setGraphic(vbox);
-            }
-        }
+    public void addMovie(MovieDetails movie) {
+        movieList.add(movie);
     }
 }

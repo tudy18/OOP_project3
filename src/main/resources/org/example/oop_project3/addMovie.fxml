@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="500" prefWidth="600" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.controllers.AddMovieController">
+
+    <top>
+        <HBox alignment="CENTER" style="-fx-background-color: #D32F2F;">
+            <Label style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;" text="Add Movie" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="10"> <!-- Removed padding -->
+            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Title:" />
+            <TextField fx:id="titleField" />
+
+            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Genre:" />
+            <TextField fx:id="genreField" />
+
+            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Release Date:" />
+            <TextField fx:id="releaseDateField" />
+
+            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Image Path:" />
+            <TextField fx:id="imagePathField" />
+
+            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Description:" />
+            <TextArea fx:id="descriptionArea" wrapText="true" />
+
+            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Duration (minutes):" />
+            <TextField fx:id="durationField" />
+
+            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Format:" />
+            <ComboBox fx:id="formatComboBox" />
+
+            <Button fx:id="addButton" text="Add Movie" style="-fx-background-color: #D32F2F; -fx-text-fill: white;" onAction="#handleAddButton" />
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-background-color: #D32F2F;">
+            <Label fx:id="statusLabel" style="-fx-text-fill: green;" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
