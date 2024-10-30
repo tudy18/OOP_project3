@@ -33,7 +33,7 @@ public class MovieCell extends ListCell<MovieDetails> {
                 Image image = new Image(getClass().getResourceAsStream(movie.getImagePath()));
                 imageView.setImage(image);
             } catch (Exception e) {
-                System.err.println("Error loading image: " + e.getMessage());
+               // System.err.println("Error loading image: " + e.getMessage());
             }
             Text titleText = new Text(movie.getTitle());
             titleText.setStyle("-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: black;");
