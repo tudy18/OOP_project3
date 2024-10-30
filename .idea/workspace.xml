@@ -5,6 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2643cd4e-d747-48b8-aae6-584ec9d087ac" name="Changes" comment="" />
+    <list default="true" id="31d362bc-c0a2-4784-8f5e-e4e77f10d6f9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/models/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/seatSelection.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/seatSelection.fxml" afterDir="false" />
+    </list>
+    <list default="true" id="31d362bc-c0a2-4784-8f5e-e4e77f10d6f9" name="Changes" comment="workspace xml conflict">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/SelectTicketsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/selectTickets.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/selectTickets.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/userProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/userProfile.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
