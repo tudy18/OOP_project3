@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31d362bc-c0a2-4784-8f5e-e4e77f10d6f9" name="Changes" comment="workspace xml conflict">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/CheckOutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/ReservationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/UserProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/models/UserProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/UserProfile.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/SelectTicketsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/CheckOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/models/CheckOut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/ReservationConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/models/ReservationConfirmation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/SelectTickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/models/SelectTickets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/checkOut.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/checkOut.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/selectTickets.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/selectTickets.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/userProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/userProfile.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
