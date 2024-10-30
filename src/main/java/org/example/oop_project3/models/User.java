@@ -7,11 +7,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Login {
+public class User {
     private String username;
     private String password;
     private String email;
-    public Login(String username, String password, String email)
+    public User(String username, String password, String email)
     {
         this.username=username;
         this.password=password;
