@@ -4,137 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31d362bc-c0a2-4784-8f5e-e4e77f10d6f9" name="Changes" comment="" />
+    <list default="true" id="2643cd4e-d747-48b8-aae6-584ec9d087ac" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="FxmlFile" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;tudy18&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/tudy18/OOP_project3.git&quot;,
-    &quot;accountId&quot;: &quot;a1644c21-e42e-4820-b160-df1345b330d2&quot;
-  }
-}</component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="2nI44IiQqQaRGq7f1Ezbk1hxZ0l" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MainApp.executor": "Run",
+    "git-widget-placeholder": "Merging master"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\OOP_project3\src\main\resources\org\example\oop_project3" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.oop_project3.MainApp" />
-      <module name="OOP_Project3" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+}]]></component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="31d362bc-c0a2-4784-8f5e-e4e77f10d6f9" name="Changes" comment="" />
-      <created>1728647066590</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1728647066590</updated>
-      <workItem from="1728647067642" duration="4409000" />
-      <workItem from="1728999856394" duration="25000" />
-      <workItem from="1728999887815" duration="125000" />
-      <workItem from="1729000068280" duration="85000" />
-      <workItem from="1729000262819" duration="2140000" />
-      <workItem from="1729056020382" duration="3714000" />
-      <workItem from="1729165715454" duration="2961000" />
-      <workItem from="1729197379748" duration="955000" />
-      <workItem from="1729696156186" duration="65000" />
-      <workItem from="1729785456461" duration="60000" />
-      <workItem from="1729857212916" duration="667000" />
-      <workItem from="1730117110483" duration="9676000" />
-    </task>
-    <task id="LOCAL-00001" summary="JavaFx SceneBuilder Test&#10;Created dbConnection class&#10;Tested HelloController">
-      <option name="closed" value="true" />
-      <created>1729060558294</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1729060558294</updated>
-    </task>
-    <task id="LOCAL-00002" summary="View layout">
-      <option name="closed" value="true" />
-      <created>1730122565572</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1730122565572</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="JavaFx SceneBuilder Test&#10;Created dbConnection class&#10;Tested HelloController" />
-    <MESSAGE value="View layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="View layout" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

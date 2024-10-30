@@ -1,4 +1,4 @@
-package org.example.oop_project3.controllers;
+package org.example.oop_project3.models;
 
 public class ReservationConfirmation {
 
@@ -10,7 +10,7 @@ public class ReservationConfirmation {
         private String date;
         private String time;
 
-        // Constructor
+
         public Reservation(String movieTitle, int hall, String seatNumber, String customerName, String date, String time) {
             this.movieTitle = movieTitle;
             this.hall = hall;
@@ -80,3 +80,8 @@ public class ReservationConfirmation {
         }
     }
 }
+
+
+
+
+

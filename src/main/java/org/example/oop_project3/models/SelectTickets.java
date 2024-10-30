@@ -1,9 +1,7 @@
-package org.example.oop_project3.controllers;
+package org.example.oop_project3.models;
 
 public class SelectTickets
 {
-
-        // Attributes for ticket counts
         private int adultTicketCount;
         private int childTicketCount;
         private int studentTicketCount;
