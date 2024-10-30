@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31d362bc-c0a2-4784-8f5e-e4e77f10d6f9" name="Changes" comment="" />
+    <list default="true" id="31d362bc-c0a2-4784-8f5e-e4e77f10d6f9" name="Changes" comment="workspace xml conflict">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/CheckOutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/ReservationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/UserProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/models/UserProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/UserProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/CheckOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/models/CheckOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/ReservationConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/models/ReservationConfirmation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/SelectTickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/models/SelectTickets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/checkOut.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/checkOut.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/selectTickets.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/selectTickets.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,11 +63,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "Merging master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OOP_project3\src\main\resources\org\example\oop_project3" />
@@ -63,7 +77,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4c299a17-e2ae-40cf-a3cd-a883cb96d5d6" name="Changes" comment="" />
+      <changelist id="31d362bc-c0a2-4784-8f5e-e4e77f10d6f9" name="Changes" comment="workspace xml conflict" />
       <created>1728647066590</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -97,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730122565572</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="workspace xml conflict">
+      <option name="closed" value="true" />
+      <created>1730206951552</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730206951552</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,7 +139,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JavaFx SceneBuilder Test&#10;Created dbConnection class&#10;Tested HelloController" />
     <MESSAGE value="View layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="View layout" />
+    <MESSAGE value="workspace xml conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace xml conflict" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
