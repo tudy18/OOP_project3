@@ -1,48 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="">
-    <!-- Top Section with Title -->
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.models.CheckOut">
+
     <top>
         <HBox alignment="CENTER" prefHeight="70.0" prefWidth="800.0" style="-fx-background-color: #D32F2F; -fx-padding: 15;">
             <Label style="-fx-font-size: 32px; -fx-text-fill: white;" text="Payment" />
         </HBox>
     </top>
 
-    <!-- Center Section with Payment Form -->
+
     <center>
-        <GridPane alignment="CENTER" hgap="10" vgap="15" style="-fx-padding: 20; -fx-background-color: #F9F9F9; -fx-border-radius: 10; -fx-background-radius: 10;">
-            <!-- Cardholder Name -->
-            <Label text="Cardholder Name:" style="-fx-font-size: 18px; -fx-text-fill: #333333;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-            <TextField fx:id="cardholderName" promptText="Enter cardholder's name" style="-fx-font-size: 16px; -fx-pref-width: 300; -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 5;" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <GridPane alignment="CENTER" hgap="10" style="-fx-padding: 20; -fx-background-color: #F9F9F9; -fx-border-radius: 10; -fx-background-radius: 10;" vgap="15">
 
-            <!-- Card Number -->
-            <Label text="Card Number:" style="-fx-font-size: 18px; -fx-text-fill: #333333;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-            <TextField fx:id="cardNumber" promptText="XXXX XXXX XXXX XXXX" style="-fx-font-size: 16px; -fx-pref-width: 300; -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 5;" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label style="-fx-font-size: 18px; -fx-text-fill: #333333;" text="Cardholder Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="cardholderName" promptText="Enter cardholder's name" style="-fx-font-size: 16px; -fx-pref-width: 300; -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 5;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-            <!-- Expiration Date -->
-            <Label text="Expiration Date:" style="-fx-font-size: 18px; -fx-text-fill: #333333;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-            <TextField fx:id="expiryDate" promptText="MM/YY" style="-fx-font-size: 16px; -fx-pref-width: 300; -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 5;" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-            <!-- CVV Code -->
-            <Label text="CVV:" style="-fx-font-size: 18px; -fx-text-fill: #333333;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-            <PasswordField fx:id="cvvCode" promptText="XXX" style="-fx-font-size: 16px; -fx-pref-width: 300; -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 5;" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <Label style="-fx-font-size: 18px; -fx-text-fill: #333333;" text="Card Number:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="cardNumber" promptText="XXXX XXXX XXXX XXXX" style="-fx-font-size: 16px; -fx-pref-width: 300; -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 5;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+
+            <Label style="-fx-font-size: 18px; -fx-text-fill: #333333;" text="Expiration Date:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="expiryDate" promptText="MM/YY" style="-fx-font-size: 16px; -fx-pref-width: 300; -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 5;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+
+            <Label style="-fx-font-size: 18px; -fx-text-fill: #333333;" text="CVV:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <PasswordField fx:id="cvvCode" promptText="XXX" style="-fx-font-size: 16px; -fx-pref-width: 300; -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 5;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
         </GridPane>
     </center>
 
-    <!-- Bottom Section with Buttons -->
+
     <bottom>
         <HBox alignment="CENTER" prefHeight="86.0" prefWidth="800.0" spacing="30" style="-fx-padding: 15;">
-            <Button onAction="#handleCancel" style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-radius: 8;" text="Cancel" />
-            <Button onAction="#handleConfirmPayment" style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-radius: 8;" text="Confirm Payment" />
+            <Button fx:id="CancelPaymentButton" onAction="#handleCancel" style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-radius: 8;" text="Cancel" />
+            <Button fx:id="ConfirmPaymentButton" onAction="#handleConfirmPayment" style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-radius: 8;" text="Confirm Payment" />
         </HBox>
     </bottom>
 </BorderPane>
