@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.controllers.ReservationController">
+<BorderPane prefHeight="481.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.controllers.ReservationController">
     <top>
         <HBox alignment="CENTER" prefHeight="70.0" prefWidth="800.0" style="-fx-background-color: #D32F2F; -fx-padding: 15;">
             <Label style="-fx-font-size: 32px; -fx-text-fill: white;" text="Confirm Your Reservation" />
@@ -48,7 +48,7 @@
 
     <bottom>
         <HBox alignment="CENTER" prefHeight="86.0" prefWidth="800.0" spacing="30" style="-fx-padding: 15;">
-            <Button fx:id="CancelReservationButton"  onAction="#goToSelectSeats" style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 5;" text="Cancel" />
+            <Button fx:id="CancelReservationButton" onAction="#goToSelectSeats" style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 5;" text="Cancel" />
             <Button fx:id="ConfirmReservationButton" onAction="#checkOut" style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 5;" text="Confirm Reservation" />
         </HBox>
     </bottom>

@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9dc31e39-1d75-4092-87f6-59a99fe9e497" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/ReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/SelectTicketsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/SelectTicketsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/selectTickets.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/selectTickets.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
