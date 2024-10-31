@@ -6,12 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import org.example.oop_project3.controllers.HomeController;
-import org.example.oop_project3.controllers.SelectTicketsController;
 
 public class MainApp extends Application {
 
