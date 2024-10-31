@@ -12,21 +12,17 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private int userId;
+    private String role;
 
-    public User(String username, String password, String email)
+    public User(String username, String password, String email, String role)
     {
         this.username=username;
         this.password=password;
         this.email=email;
+        this.role=role;
     }
 
-    public void loginDisplay(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/org/example/oop_project3/login-view.fxml"));
-        Scene scene = new Scene(root);
-
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
     public String getPassword() {
         return password;
     }
@@ -42,4 +38,8 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public void setRole(String role){this.role = role;}
+
+    public String getRole(){return role;}
 }
