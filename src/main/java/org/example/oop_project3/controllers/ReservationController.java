@@ -20,6 +20,8 @@ public class ReservationController {
     private String selectedDate;
     private String selectedTime;
     private String selectedHall;
+    private Scene scene;
+    private Stage stage;
 
     @FXML
     private Label titleLabel, hallLabel, timeLabel, dateLabel, formatLabel;
@@ -43,20 +45,13 @@ public class ReservationController {
             formatLabel.setText("Format: " + movieDetails.getFormat());
         }
 
-        confirmReservationButton.setOnAction(e -> {
-            navigateToCheckOut();
-        });
     }
     @FXML
-    private void navigateToCheckOut() { // Remove ActionEvent parameter
-        try {
-            Parent checkOutRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/oop_project3/checkOut.fxml")));
-            Stage stage = (Stage) confirmReservationButton.getScene().getWindow();
-            Scene scene = new Scene(checkOutRoot);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void checkOut(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/oop_project3/checkOut.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene (scene);
     }
 
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.models.ReservationConfirmation">
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.controllers.ReservationController">
     <top>
         <HBox alignment="CENTER" prefHeight="70.0" prefWidth="800.0" style="-fx-background-color: #D32F2F; -fx-padding: 15;">
             <Label style="-fx-font-size: 32px; -fx-text-fill: white;" text="Confirm Your Reservation" />
