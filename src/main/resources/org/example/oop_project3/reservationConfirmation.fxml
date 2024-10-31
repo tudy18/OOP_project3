@@ -48,8 +48,8 @@
 
     <bottom>
         <HBox alignment="CENTER" prefHeight="86.0" prefWidth="800.0" spacing="30" style="-fx-padding: 15;">
-            <Button fx:id="CancelReservationButton" onAction="#handleCancel" style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 5;" text="Cancel" />
-            <Button fx:id="ConfirmReservationButton" onAction="#handleConfirmReservation" style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 5;" text="Confirm Reservation" />
+            <Button fx:id="CancelReservationButton"  style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 5;" text="Cancel" />
+            <Button fx:id="ConfirmReservationButton" onAction="#checkOut" style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 5;" text="Confirm Reservation" />
         </HBox>
     </bottom>
 </BorderPane>
