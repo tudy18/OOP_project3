@@ -42,4 +42,17 @@ public class CheckOutController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void goToReservationConfirmation(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/oop_project3/ReservationConfirmation.fxml")));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
