@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -27,22 +28,8 @@ public class HomeController {
         movieList = FXCollections.observableArrayList();
     }
 
-    public void loadHomeView(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/home.fxml"));
-        loader.setController(this);
-        Parent root = loader.load();
-
-        loadSampleMovies();
-        movieListView.setItems(movieList);
-        movieListView.setCellFactory(param -> new MovieCell());
-        setupListViewActions(primaryStage);
-
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-    private void loadSampleMovies() {
+    @FXML
+    private void initialize() {
         List<MovieDetails> movies = Arrays.asList(
                 new MovieDetails("Inception", "Sci-Fi", "2010", "/images/inception.jpg", "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.", 120, "2D"),
                 new MovieDetails("The Matrix", "Action", "1999", "/images/the_matrix.jpg", "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.", 150, "2D"),
@@ -67,23 +54,46 @@ public class HomeController {
         movies.get(4).addSchedule("2024-11-06", List.of("12:00 PM", "5:00 PM", "8:00 PM"), List.of("2", "1", "3")); 
 
         movieList.addAll(movies);
-    }
-
-    private void setupListViewActions(Stage primaryStage) {
-        movieListView.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) {
-                MovieDetails selectedMovie = movieListView.getSelectionModel().getSelectedItem();
-                if (selectedMovie != null) {
-                    loadMovieDetailsView(primaryStage, selectedMovie);
+        movieListView.setItems(movieList);
+        setupListViewActions();
+        movieListView.setCellFactory(param -> new ListCell<MovieDetails>() {
+            @Override
+            protected void updateItem(MovieDetails movie, boolean empty) {
+                super.updateItem(movie, empty);
+                if (empty || movie == null || movie.getTitle() == null) {
+                    setText(null);
+                } else {
+                    setText(movie.getTitle());
                 }
             }
         });
     }
 
-    private void loadMovieDetailsView(Stage primaryStage, MovieDetails selectedMovie) {
-        MovieDetailsController movieDetailsController = new MovieDetailsController(selectedMovie, primaryStage);
-        movieDetailsController.loadFXML();
+    private void setupListViewActions() {
+        movieListView.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                MovieDetails selectedMovie = movieListView.getSelectionModel().getSelectedItem();
+                if (selectedMovie != null) {
+                    loadMovieDetailsView(selectedMovie);
+                }
+            }
+        });
     }
+
+    private void loadMovieDetailsView(MovieDetails selectedMovie) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/movieDetails.fxml"));
+            Parent movieDetailsRoot = loader.load();
+            MovieDetailsController controller = loader.getController();
+            controller.setSelectedMovie(selectedMovie);
+            Stage stage = (Stage) movieListView.getScene().getWindow();
+            stage.setScene(new Scene(movieDetailsRoot));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void addMovie(MovieDetails movie) {
         movieList.add(movie);

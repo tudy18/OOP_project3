@@ -23,41 +23,32 @@ public class MovieDetailsController {
     @FXML
     private VBox scheduleContainer;
 
-    private final MovieDetails selectedMovie;
-    private final Stage stage;
-HomeController homeController;
-    public MovieDetailsController(MovieDetails selectedMovie, Stage stage) {
+    private MovieDetails selectedMovie;
+
+    HomeController homeController;
+    public MovieDetailsController(MovieDetails selectedMovie) {
         this.selectedMovie = selectedMovie;
-        this.stage = stage;
     }
-
-    public void loadFXML() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/movieDetails.fxml"));
-            loader.setController(this);
-            Parent root = loader.load();
-
-            initializeView();
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void initializeView() {
+    @FXML
+    private void initialize() {
         titleLabel.setText(selectedMovie.getTitle());
         genreLabel.setText(selectedMovie.getGenre());
         releaseDateLabel.setText(selectedMovie.getReleaseDate());
         descriptionLabel.setText(selectedMovie.getDescription());
         loadScheduleButtons();
         homeController=new HomeController();
-        backBtn.setOnAction(e-> {
+        backBtn.setOnAction(e -> {
             try {
-                homeController.loadHomeView(stage);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/home.fxml"));
+                Parent homeRoot = loader.load();
+
+                HomeController homeController = loader.getController();
+
+                Stage stage = (Stage) backBtn.getScene().getWindow();
+                stage.setScene(new Scene(homeRoot));
+                stage.show();
             } catch (IOException ex) {
-                throw new RuntimeException(ex);
+                ex.printStackTrace();
             }
         });
     }
@@ -83,4 +74,8 @@ HomeController homeController;
         System.out.println("Selected schedule: Date - " + date + ", Time - " + time + ", Hall - " + hall);
     }
 
+    public void setSelectedMovie(MovieDetails selectedMovie) {
+        this.selectedMovie = selectedMovie;
+        initialize();
+    }
 }
