@@ -107,4 +107,20 @@ public class SelectTicketsController {
         scene=new Scene(root);
         stage.setScene(scene);
     }
+
+    @FXML
+    private void goToDetailsMovie(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/oop_project3/movieDetails.fxml")));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void goToDetailsMovie(javafx.event.ActionEvent event) {
+    }
 }
