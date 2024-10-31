@@ -15,13 +15,9 @@ import org.example.oop_project3.models.MovieDetails;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-
 public class HomeController {
     @FXML
     private ListView<MovieDetails> movieListView;
-    @FXML
-    private Button addMovieButton;
-
     private ObservableList<MovieDetails> movieList;
 
     public HomeController() {
@@ -30,6 +26,12 @@ public class HomeController {
 
     @FXML
     private void initialize() {
+        loadMovies();
+        setupListViewActions();
+    }
+
+    private void loadMovies() {
+        movieList.clear();
         List<MovieDetails> movies = Arrays.asList(
                 new MovieDetails("Inception", "Sci-Fi", "2010", "/images/inception.jpg", "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.", 120, "2D"),
                 new MovieDetails("The Matrix", "Action", "1999", "/images/the_matrix.jpg", "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.", 150, "2D"),
@@ -51,7 +53,7 @@ public class HomeController {
         movies.get(3).addSchedule("2024-11-05", List.of("3:00 PM", "6:00 PM", "10:00 PM"), List.of("1", "2", "4"));
 
         movies.get(4).addSchedule("2024-11-03", List.of("1:30 PM", "6:30 PM", "9:30 PM"), List.of("1", "2", "3"));
-        movies.get(4).addSchedule("2024-11-06", List.of("12:00 PM", "5:00 PM", "8:00 PM"), List.of("2", "1", "3")); 
+        movies.get(4).addSchedule("2024-11-06", List.of("12:00 PM", "5:00 PM", "8:00 PM"), List.of("2", "1", "3"));
 
         movieList.addAll(movies);
         movieListView.setItems(movieList);
