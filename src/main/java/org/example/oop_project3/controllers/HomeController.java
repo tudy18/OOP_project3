@@ -87,10 +87,9 @@ public class HomeController {
     private void loadMovieDetailsView(MovieDetails selectedMovie) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/movieDetails.fxml"));
-            MovieDetailsController controller = new MovieDetailsController();
-            loader.setController(controller);
             Parent movieDetailsRoot = loader.load();
-
+            MovieDetailsController controller = loader.getController();
+            controller.setSelectedMovie(selectedMovie);
             Stage stage = (Stage) movieListView.getScene().getWindow();
             stage.setScene(new Scene(movieDetailsRoot));
             stage.show();
@@ -106,7 +105,7 @@ public class HomeController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/addMovie.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
-            AddMovieController controller = new AddMovieController(this, stage );
+            AddMovieController controller = new AddMovieController();
             loader.setController(controller);
 
 

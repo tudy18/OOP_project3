@@ -58,7 +58,7 @@ public class ReservationController {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/oop_project3/seatSelection.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
