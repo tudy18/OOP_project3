@@ -4,30 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c299a17-e2ae-40cf-a3cd-a883cb96d5d6" name="Changes" comment="JavaFx SceneBuilder Test&#10;Created dbConnection class&#10;Tested HelloController">
-    <list default="true" id="4c299a17-e2ae-40cf-a3cd-a883cb96d5d6" name="Changes" comment="View layout">
+    <list default="true" id="9dc31e39-1d75-4092-87f6-59a99fe9e497" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SeatSelectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/controllers/SeatSelectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/reservationConfirmation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MovieSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MovieSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SeatSelectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SeatSelectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/seatReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/seatReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/oop_project3/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/oop_project3/MainApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="Class" />
-        <option value="FxmlFile" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,12 +23,12 @@
     &quot;assignee&quot;: &quot;tudy18&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/tudy18/OOP_project3.git",
-    "accountId": "a1644c21-e42e-4820-b160-df1345b330d2"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/tudy18/OOP_project3.git&quot;,
+    &quot;accountId&quot;: &quot;b3145dcc-7228-4db5-ba1a-f506a940554a&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -52,9 +37,9 @@
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="2nI44IiQqQaRGq7f1Ezbk1hxZ0l" />
+  <component name="ProjectId" id="2oAcdASH3EL9cUiWulghURhgzf4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -62,110 +47,17 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.dbConnection.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.MainApp.executor": "Run",
-    "Application.dbConnection.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/java/OOP_Project3/src/main/java/org/example/oop_project3",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
-    "vue.rearranger.settings.migration": "true"
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="4c299a17-e2ae-40cf-a3cd-a883cb96d5d6" name="Changes" comment="" />
-      <created>1728647066590</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1728647066590</updated>
-      <workItem from="1728647067642" duration="4409000" />
-      <workItem from="1728999856394" duration="25000" />
-      <workItem from="1728999887815" duration="125000" />
-      <workItem from="1729000068280" duration="85000" />
-      <workItem from="1729000262819" duration="2140000" />
-      <workItem from="1729056020382" duration="3714000" />
-      <workItem from="1729165715454" duration="2961000" />
-      <workItem from="1729197379748" duration="955000" />
-      <workItem from="1729696156186" duration="65000" />
-      <workItem from="1729785456461" duration="60000" />
-      <workItem from="1729857212916" duration="667000" />
-      <workItem from="1730117110483" duration="9676000" />
-    </task>
-    <task id="LOCAL-00001" summary="JavaFx SceneBuilder Test&#10;Created dbConnection class&#10;Tested HelloController">
-      <option name="closed" value="true" />
-      <created>1729060558294</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1729060558294</updated>
-    </task>
-    <task id="LOCAL-00002" summary="View layout">
-      <option name="closed" value="true" />
-      <created>1730122565572</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1730122565572</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JavaFx SceneBuilder Test&#10;Created dbConnection class&#10;Tested HelloController" />
-    <MESSAGE value="View layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="View layout" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="Regiser Login And seatSelection fxmls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Regiser Login And seatSelection fxmls" />
   </component>
 </project>
