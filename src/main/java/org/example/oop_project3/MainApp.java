@@ -3,6 +3,7 @@ package org.example.oop_project3;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.example.oop_project3.controllers.HomeController;
+import org.example.oop_project3.controllers.SelectTicketsController;
 
 public class MainApp extends Application {
     @Override
