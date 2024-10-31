@@ -35,7 +35,6 @@ public class HomeController {
         loadSampleMovies();
         movieListView.setItems(movieList);
         movieListView.setCellFactory(param -> new MovieCell());
-
         setupListViewActions(primaryStage);
 
         Scene scene = new Scene(root);
@@ -51,6 +50,21 @@ public class HomeController {
                 new MovieDetails("The Godfather", "Crime", "1972", "/images/the_godfather.jpg", "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.", 175, "2D"),
                 new MovieDetails("Pulp Fiction", "Crime", "1994", "/images/pulp_fiction.jpg", "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.", 154, "2D")
         );
+
+        movies.get(0).addSchedule("2024-11-01", List.of("10:00 AM", "1:00 PM", "6:00 PM"), List.of("1", "2", "3"));
+        movies.get(0).addSchedule("2024-11-02", List.of("11:00 AM", "2:00 PM", "8:00 PM"), List.of("1", "3", "2"));
+
+        movies.get(1).addSchedule("2024-11-01", List.of("12:00 PM", "3:00 PM", "8:00 PM"), List.of("1", "2", "4"));
+        movies.get(1).addSchedule("2024-11-03", List.of("1:00 PM", "4:00 PM", "9:00 PM"), List.of("3", "2", "1"));
+
+        movies.get(2).addSchedule("2024-11-01", List.of("2:00 PM", "5:00 PM", "9:00 PM"), List.of("3", "1", "2"));
+        movies.get(2).addSchedule("2024-11-04", List.of("12:30 PM", "6:00 PM", "8:30 PM"), List.of("2", "3", "1"));
+
+        movies.get(3).addSchedule("2024-11-02", List.of("11:00 AM", "4:00 PM", "7:00 PM"), List.of("2", "3", "1"));
+        movies.get(3).addSchedule("2024-11-05", List.of("3:00 PM", "6:00 PM", "10:00 PM"), List.of("1", "2", "4"));
+
+        movies.get(4).addSchedule("2024-11-03", List.of("1:30 PM", "6:30 PM", "9:30 PM"), List.of("1", "2", "3"));
+        movies.get(4).addSchedule("2024-11-06", List.of("12:00 PM", "5:00 PM", "8:00 PM"), List.of("2", "1", "3")); 
 
         movieList.addAll(movies);
     }

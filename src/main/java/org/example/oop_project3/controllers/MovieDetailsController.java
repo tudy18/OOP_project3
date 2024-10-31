@@ -17,13 +17,7 @@ public class MovieDetailsController {
     @FXML
     private Button backBtn;
     @FXML
-    private Label titleLabel;
-    @FXML
-    private Label genreLabel;
-    @FXML
-    private Label releaseDateLabel;
-    @FXML
-    private Label descriptionLabel;
+    private Label titleLabel, genreLabel, releaseDateLabel, descriptionLabel;
     @FXML
     private ImageView posterImageView;
     @FXML
@@ -70,13 +64,23 @@ HomeController homeController;
 
     private void loadScheduleButtons() {
         selectedMovie.getTimesByDate().forEach((date, times) -> {
+            Label dateLabel = new Label("Date: " + date);
+            dateLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 14;");
+            scheduleContainer.getChildren().add(dateLabel);
+
             for (int i = 0; i < times.size(); i++) {
                 String time = times.get(i);
                 String hall = selectedMovie.getHallsForDate(date).get(i);
-                Button scheduleButton = new Button(time + " HALL " + hall + " " + selectedMovie.getFormat());
+                Button scheduleButton = new Button(time + " - Hall " + hall + " (" + selectedMovie.getFormat() + ")");
                 scheduleContainer.getChildren().add(scheduleButton);
+
+                scheduleButton.setOnAction(e -> handleScheduleButtonClick(date, time, hall));
             }
         });
-
     }
+
+    private void handleScheduleButtonClick(String date, String time, String hall) {
+        System.out.println("Selected schedule: Date - " + date + ", Time - " + time + ", Hall - " + hall);
+    }
+
 }
