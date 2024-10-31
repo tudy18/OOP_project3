@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import org.example.oop_project3.models.MovieDetails;
 
 import java.io.IOException;
-
 public class MovieDetailsController {
     @FXML
     private Button backBtn;
@@ -23,46 +22,37 @@ public class MovieDetailsController {
     @FXML
     private VBox scheduleContainer;
 
-    private final MovieDetails selectedMovie;
-    private final Stage stage;
-HomeController homeController;
-    public MovieDetailsController(MovieDetails selectedMovie, Stage stage) {
-        this.selectedMovie = selectedMovie;
-        this.stage = stage;
+    private MovieDetails selectedMovie;
+
+    public MovieDetailsController() {
     }
 
-    public void loadFXML() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/movieDetails.fxml"));
-            loader.setController(this);
-            Parent root = loader.load();
+    @FXML
+    private void initialize() {
+        if (selectedMovie != null) {
+            titleLabel.setText(selectedMovie.getTitle());
+            genreLabel.setText(selectedMovie.getGenre());
+            releaseDateLabel.setText(selectedMovie.getReleaseDate());
+            descriptionLabel.setText(selectedMovie.getDescription());
+            loadScheduleButtons();
+        }
 
-            initializeView();
+        backBtn.setOnAction(e -> loadHomeView());
+    }
 
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void setSelectedMovie(MovieDetails selectedMovie) {
+        this.selectedMovie = selectedMovie;
+        if (titleLabel != null) {
+            titleLabel.setText(selectedMovie.getTitle());
+            genreLabel.setText(selectedMovie.getGenre());
+            releaseDateLabel.setText(selectedMovie.getReleaseDate());
+            descriptionLabel.setText(selectedMovie.getDescription());
+            loadScheduleButtons();
         }
     }
 
-    private void initializeView() {
-        titleLabel.setText(selectedMovie.getTitle());
-        genreLabel.setText(selectedMovie.getGenre());
-        releaseDateLabel.setText(selectedMovie.getReleaseDate());
-        descriptionLabel.setText(selectedMovie.getDescription());
-        loadScheduleButtons();
-        homeController=new HomeController();
-        backBtn.setOnAction(e-> {
-            try {
-                homeController.loadHomeView(stage);
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-        });
-    }
-
     private void loadScheduleButtons() {
+        scheduleContainer.getChildren().clear();
         selectedMovie.getTimesByDate().forEach((date, times) -> {
             Label dateLabel = new Label("Date: " + date);
             dateLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 14;");
@@ -73,14 +63,37 @@ HomeController homeController;
                 String hall = selectedMovie.getHallsForDate(date).get(i);
                 Button scheduleButton = new Button(time + " - Hall " + hall + " (" + selectedMovie.getFormat() + ")");
                 scheduleContainer.getChildren().add(scheduleButton);
-
                 scheduleButton.setOnAction(e -> handleScheduleButtonClick(date, time, hall));
             }
         });
     }
 
     private void handleScheduleButtonClick(String date, String time, String hall) {
-        System.out.println("Selected schedule: Date - " + date + ", Time - " + time + ", Hall - " + hall);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/reservationConfirmation.fxml"));
+            Parent reservationRoot = loader.load();
+
+            ReservationController reservationController = loader.getController();
+            reservationController.setReservationDetails(selectedMovie, date, time, hall);
+
+            Stage stage = (Stage) scheduleContainer.getScene().getWindow();
+            Scene reservationScene = new Scene(reservationRoot);
+            stage.setScene(reservationScene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
+    private void loadHomeView() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/home.fxml"));
+            Parent homeRoot = loader.load();
+            Stage stage = (Stage) backBtn.getScene().getWindow();
+            stage.setScene(new Scene(homeRoot));
+            stage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 }
