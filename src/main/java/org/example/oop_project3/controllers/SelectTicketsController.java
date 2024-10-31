@@ -34,14 +34,6 @@ public class SelectTicketsController {
     private int childTickets = 0;
     private int studentTickets = 0;
 
-    public void selectTicketsDisplay(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/selectTickets.fxml"));
-        Parent root = loader.load();
-
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
     @FXML
     public void incrementAdult() {
         adultTickets++;
