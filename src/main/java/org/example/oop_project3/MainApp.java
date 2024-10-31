@@ -23,7 +23,7 @@ public class MainApp extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/org/example/oop_project3/reservationConfirmation.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Workout Tracker");
+        stage.setTitle("Cinema");
         stage.setScene(scene);
         stage.show();
     }
