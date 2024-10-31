@@ -8,11 +8,11 @@ import javafx.scene.text.Text;
 import javafx.geometry.Insets;
 import org.example.oop_project3.models.MovieDetails;
 
-public class MovieCell extends ListCell<MovieDetails> {
+public class MovieCellController extends ListCell<MovieDetails> {
 
     private final VBox vbox;
 
-    public MovieCell() {
+    public MovieCellController() {
         vbox = new VBox();
         vbox.setSpacing(10);
         vbox.setPadding(new Insets(10));
@@ -33,7 +33,7 @@ public class MovieCell extends ListCell<MovieDetails> {
                 Image image = new Image(getClass().getResourceAsStream(movie.getImagePath()));
                 imageView.setImage(image);
             } catch (Exception e) {
-               // System.err.println("Error loading image: " + e.getMessage());
+                // System.err.println("Error loading image: " + e.getMessage());
             }
             Text titleText = new Text(movie.getTitle());
             titleText.setStyle("-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: black;");

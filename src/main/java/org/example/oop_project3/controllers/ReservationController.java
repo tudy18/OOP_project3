@@ -19,10 +19,10 @@ public class ReservationController
 
         public void showReservationConfirmation(Stage primaryStage) throws IOException
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/controllers/ReservationConfirmation/reservationConfirmation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/reservationConfirmation.fxml"));
             loader.setController(this);
             Parent root = loader.load();
-
+            checkOutController=new CheckOutController();
             confirmReservationButton.setOnAction(e -> {
                 try {
                     checkOutController.proceedToCheckOut(primaryStage);
