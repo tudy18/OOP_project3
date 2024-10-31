@@ -7,21 +7,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import org.example.oop_project3.models.MovieDetails;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.Objects;
 
 public class SelectTicketsController {
-
     @FXML
-    private Label adultCount;
-    @FXML
-    private Label childCount;
-    @FXML
-    private Label studentCount;
-    @FXML
-    private Label totalPrice;
+    private Label movieTitleLabel, movieFormatLabel, movieGenreLabel, movieDateTimeLabel, movieHallLabel, adultCount, childCount, studentCount, totalPrice;
 
     private Stage stage;
     private Scene scene;
@@ -33,6 +27,25 @@ public class SelectTicketsController {
     private int adultTickets = 0;
     private int childTickets = 0;
     private int studentTickets = 0;
+
+    private String date;
+    private String time;
+    private String hall;
+    private String format;
+    private MovieDetails selectedMovie;
+
+    public void setMovieAndScheduleDetails(MovieDetails selectedMovie, String date, String time, String hall, String format) {
+        this.selectedMovie = selectedMovie;
+        this.date = date;
+        this.time = time;
+        this.hall = hall;
+        this.format=format;
+        movieTitleLabel.setText(selectedMovie.getTitle());
+        movieGenreLabel.setText(selectedMovie.getGenre());
+        movieDateTimeLabel.setText(date+" at " +time);
+        movieFormatLabel.setText(format);
+        movieHallLabel.setText("Hall " + hall);
+    }
 
     @FXML
     public void incrementAdult() {

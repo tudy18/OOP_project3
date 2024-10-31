@@ -63,18 +63,18 @@ public class MovieDetailsController {
                 String hall = selectedMovie.getHallsForDate(date).get(i);
                 Button scheduleButton = new Button(time + " - Hall " + hall + " (" + selectedMovie.getFormat() + ")");
                 scheduleContainer.getChildren().add(scheduleButton);
-                scheduleButton.setOnAction(e -> handleScheduleButtonClick(date, time, hall));
+                scheduleButton.setOnAction(e -> handleScheduleButtonClick(date, time, hall, selectedMovie.getFormat()));
             }
         });
     }
 
-    private void handleScheduleButtonClick(String date, String time, String hall) {
+    private void handleScheduleButtonClick(String date, String time, String hall, String format) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/reservationConfirmation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/selectTickets.fxml"));
             Parent reservationRoot = loader.load();
 
-            ReservationController reservationController = loader.getController();
-            reservationController.setReservationDetails(selectedMovie, date, time, hall);
+            SelectTicketsController selectTicketsController = loader.getController();
+            selectTicketsController.setMovieAndScheduleDetails(selectedMovie, date, time, hall, format);
 
             Stage stage = (Stage) scheduleContainer.getScene().getWindow();
             Scene reservationScene = new Scene(reservationRoot);
