@@ -36,6 +36,10 @@ public class ReservationController
             primaryStage.show();
         }
 
+    @FXML
+    private void initialize()
+    {
 
+    }
 
 }

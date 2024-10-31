@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.models.CheckOut">
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.controllers.CheckOutController">
 
     <top>
         <HBox alignment="CENTER" prefHeight="70.0" prefWidth="800.0" style="-fx-background-color: #D32F2F; -fx-padding: 15;">
@@ -52,8 +52,8 @@
 
     <bottom>
         <HBox alignment="CENTER" prefHeight="86.0" prefWidth="800.0" spacing="30" style="-fx-padding: 15;">
-            <Button fx:id="CancelPaymentButton" onAction="#handleCancel" style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-radius: 8;" text="Cancel" />
-            <Button fx:id="ConfirmPaymentButton" onAction="#handleConfirmPayment" style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-radius: 8;" text="Confirm Payment" />
+            <Button fx:id="CancelPaymentButton"  style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-radius: 8;" text="Cancel" />
+            <Button fx:id="ConfirmPaymentButton"  style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-radius: 8;" text="Confirm Payment" />
         </HBox>
     </bottom>
 </BorderPane>

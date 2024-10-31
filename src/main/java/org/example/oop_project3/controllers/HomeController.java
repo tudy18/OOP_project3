@@ -34,7 +34,7 @@ public class HomeController {
 
         loadSampleMovies();
         movieListView.setItems(movieList);
-        movieListView.setCellFactory(param -> new MovieCell());
+//        movieListView.setCellFactory(param -> new MovieCell());
         setupListViewActions(primaryStage);
 
         Scene scene = new Scene(root);
