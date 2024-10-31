@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.example.oop_project3.models.MovieDetails;
+import org.example.oop_project3.models.User;
 
 import java.io.IOException;
 public class MovieDetailsController {
@@ -23,9 +24,6 @@ public class MovieDetailsController {
     private VBox scheduleContainer;
 
     private MovieDetails selectedMovie;
-
-    public MovieDetailsController() {
-    }
 
     @FXML
     private void initialize() {

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.models.UserProfile">
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.controllers.UserProfileController">
 
     <top>
         <HBox alignment="CENTER" prefHeight="70.0" prefWidth="500.0" style="-fx-background-color: #D32F2F; -fx-padding: 15;">

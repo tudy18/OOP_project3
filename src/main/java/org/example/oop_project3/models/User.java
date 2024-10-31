@@ -18,13 +18,6 @@ public class User {
         this.email=email;
     }
 
-    public void loginDisplay(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/org/example/oop_project3/login-view.fxml"));
-        Scene scene = new Scene(root);
-
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
     public String getPassword() {
         return password;
     }
@@ -39,5 +32,9 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

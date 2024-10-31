@@ -12,6 +12,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.example.oop_project3.models.MovieDetails;
+import org.example.oop_project3.models.User;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -85,9 +87,10 @@ public class HomeController {
     private void loadMovieDetailsView(MovieDetails selectedMovie) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/movieDetails.fxml"));
+            MovieDetailsController controller = new MovieDetailsController();
+            loader.setController(controller);
             Parent movieDetailsRoot = loader.load();
-            MovieDetailsController controller = loader.getController();
-            controller.setSelectedMovie(selectedMovie);
+
             Stage stage = (Stage) movieListView.getScene().getWindow();
             stage.setScene(new Scene(movieDetailsRoot));
             stage.show();
@@ -96,8 +99,23 @@ public class HomeController {
         }
     }
 
+@FXML
+    private void openAddMovie()
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/addMovie.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            AddMovieController controller = new AddMovieController(this, stage );
+            loader.setController(controller);
 
-    public void addMovie(MovieDetails movie) {
-        movieList.add(movie);
+
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 }

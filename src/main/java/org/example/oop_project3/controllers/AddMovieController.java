@@ -19,7 +19,8 @@ public class AddMovieController {
 
     private Stage stage;
     private HomeController homeController;
-
+    public AddMovieController() {
+    }
     public AddMovieController(HomeController homeController, Stage stage) {
         this.homeController = homeController;
         this.stage = stage;
@@ -49,7 +50,6 @@ public class AddMovieController {
 
             MovieDetails newMovie = new MovieDetails(title, genre, releaseDate, imagePath, description, duration, format);
 
-            homeController.addMovie(newMovie);
 
             statusLabel.setText("Movie added successfully!");
             statusLabel.setStyle("-fx-text-fill: green;");
