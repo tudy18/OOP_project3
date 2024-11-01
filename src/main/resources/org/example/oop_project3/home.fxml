@@ -12,7 +12,6 @@
         <HBox alignment="CENTER" style="-fx-background-color: #D32F2F; -fx-padding: 15;">
 
             <HBox alignment="CENTER_LEFT" spacing="10">
-                <Button mnemonicParsing="false" style="-fx-background-color: #D32F2F;" text="Profile" textFill="WHITE" />
                 <Button mnemonicParsing="false" onAction="#openAddMovie" style="-fx-background-color: #D32F2F;" text="Add Movie" textFill="WHITE" />
             </HBox>
 

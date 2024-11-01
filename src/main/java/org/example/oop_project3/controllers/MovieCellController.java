@@ -29,11 +29,14 @@ public class MovieCellController extends ListCell<MovieDetails> {
             vbox.getChildren().clear();
 
             ImageView imageView = new ImageView();
+
+            imageView.setFitHeight(200);
+            imageView.setPreserveRatio(true);
             try {
-                Image image = new Image(getClass().getResourceAsStream(movie.getImagePath()));
+                Image image = new Image("file:" + movie.getImagePath());
                 imageView.setImage(image);
             } catch (Exception e) {
-                // System.err.println("Error loading image: " + e.getMessage());
+                System.err.println("Error loading image: " + e.getMessage());
             }
             Text titleText = new Text(movie.getTitle());
             titleText.setStyle("-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: black;");
