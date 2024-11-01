@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import org.example.oop_project3.models.MovieDetails;
 
-import java.awt.event.ActionEvent;
+import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -101,17 +101,9 @@ public class SelectTicketsController {
     }
 
     @FXML
-    private void nextStep(javafx.event.ActionEvent event) throws IOException {
-        Parent root=FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/oop_project3/seatSelection.fxml")));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        scene=new Scene(root);
-        stage.setScene(scene);
-    }
-
-    @FXML
-    private void goToDetailsMovie(ActionEvent event) {
+    private void goToHome(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/oop_project3/movieDetails.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/oop_project3/home.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -119,8 +111,25 @@ public class SelectTicketsController {
             e.printStackTrace();
         }
     }
-
-
-    public void goToDetailsMovie(javafx.event.ActionEvent event) {
+    private int calculateTotalSeats() {
+        return adultTickets + childTickets + studentTickets;
     }
+
+    @FXML
+    private void goToSeatSelection(ActionEvent event) throws IOException {
+        int totalSeats = calculateTotalSeats();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/seatSelection.fxml"));
+        Parent root = loader.load();
+
+
+        SeatSelectionController seatSelectionController = loader.getController();
+        seatSelectionController.initializeWithSeatCount(totalSeats, date, time, hall, format);
+
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

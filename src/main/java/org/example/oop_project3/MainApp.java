@@ -22,9 +22,9 @@ public class MainApp extends Application {
             Logout(stage);
         });
 
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/org/example/oop_project3/home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/org/example/oop_project3/login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Cinema");
+        stage.setTitle("MovieStar");
         stage.setScene(scene);
         stage.show();
     }

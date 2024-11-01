@@ -73,8 +73,8 @@
 
     <bottom>
         <HBox alignment="CENTER" prefHeight="70.0" prefWidth="600.0" spacing="20" style="-fx-padding: 10;">
-            <Button fx:id="cancelTicketsButton" onAction="#goToDetailsMovie" style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 15; -fx-background-radius: 8; -fx-border-radius: 8;" text="Cancel" />
-            <Button onAction="#nextStep" style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 15; -fx-background-radius: 8; -fx-border-radius: 8;" text="Next Step" />
+            <Button fx:id="cancelTicketsButton" onAction="#goToHome" style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 15; -fx-background-radius: 8; -fx-border-radius: 8;" text="Cancel" />
+            <Button onAction="#goToSeatSelection" style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 15; -fx-background-radius: 8; -fx-border-radius: 8;" text="Next Step" />
         </HBox>
     </bottom>
 </BorderPane>

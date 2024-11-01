@@ -8,12 +8,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class User {
-    private String username;
+    private static String username;
     private String password;
     private String email;
     public User(String username, String password, String email)
     {
-        this.username=username;
+        User.username=username;
         this.password=password;
         this.email=email;
     }
@@ -30,8 +30,8 @@ public class User {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public static void setUsername(String username) {
+        User.username = username;
     }
 
     public String getEmail() {

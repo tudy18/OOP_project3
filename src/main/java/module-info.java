@@ -10,6 +10,7 @@ module org.example.oop_project3 {
     requires eu.hansolo.tilesfx;
     requires java.sql;
     requires java.desktop;
+    requires jbcrypt;
 
     opens org.example.oop_project3 to javafx.fxml;
     exports org.example.oop_project3;

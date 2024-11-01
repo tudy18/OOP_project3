@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import org.example.oop_project3.models.MovieDetails;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
 public class ReservationController {
@@ -23,28 +24,19 @@ public class ReservationController {
     private Stage stage;
 
     @FXML
-    private Label titleLabel, hallLabel, timeLabel, dateLabel, formatLabel;
+    private Label titleLabel, hallLabel, timeLabel, dateLabel, seatLabel, nameLabel, contactLabel;
     @FXML
     private Button confirmReservationButton;
 
-    public void setReservationDetails(MovieDetails movieDetails, String date, String time, String hall) {
-        this.movieDetails = movieDetails;
-        this.selectedDate = date;
-        this.selectedTime = time;
-        this.selectedHall = hall;
-    }
-
     @FXML
-    private void initialize() {
-        if (movieDetails != null) {
-            titleLabel.setText("Title: " + movieDetails.getTitle());
-            hallLabel.setText("Hall: " + selectedHall);
-            timeLabel.setText("Time: " + selectedTime);
-            dateLabel.setText("Date: " + selectedDate);
-            formatLabel.setText("Format: " + movieDetails.getFormat());
-        }
-
+    public void setReservationDetails(String title, String hall, List<String> seats, String date, String time) {
+        titleLabel.setText("Movie Title: " + title);
+        hallLabel.setText("Hall: " + hall);
+        seatLabel.setText("Seat Number(s): " + String.join(", ", seats));
+        dateLabel.setText("Date: " + date);
+        timeLabel.setText("Time: " + time);
     }
+
     @FXML
     public void checkOut(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/oop_project3/checkOut.fxml")));
@@ -54,9 +46,9 @@ public class ReservationController {
     }
 
     @FXML
-    private void goToSelectSeats(ActionEvent event) {
+    private void goToHome(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/oop_project3/seatSelection.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/oop_project3/home.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -64,6 +56,4 @@ public class ReservationController {
             e.printStackTrace();
         }
     }
-
-
 }
