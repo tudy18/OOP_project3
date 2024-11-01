@@ -52,7 +52,7 @@
 
     <bottom>
         <HBox alignment="CENTER" prefHeight="86.0" prefWidth="800.0" spacing="30" style="-fx-padding: 15;">
-            <Button fx:id="CancelPaymentButton" onAction="#goToReservationConfirmation"  style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-radius: 8;" text="Cancel" />
+            <Button fx:id="CancelPaymentButton" onAction="#navigateToHome"  style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-radius: 8;" text="Cancel" />
             <Button fx:id="ConfirmPaymentButton" onAction="#navigateToHome" style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 8; -fx-border-radius: 8;" text="Confirm Payment" />
         </HBox>
     </bottom>
