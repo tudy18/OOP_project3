@@ -8,8 +8,8 @@ public class MovieDetails extends Movie {
 
     private Map<String, List<String>> timesByDate;
     private Map<String, List<String>> hallsByDate;
-    private String format; // "2D" or "3D"
-    public MovieDetails(String title, String genre, String releaseDate, String imagePath, String description,int duration,  String format) {
+    private String format;
+    public MovieDetails(String title, String genre, String releaseDate, String imagePath, String description, int duration,  String format) {
         super(title, genre, releaseDate, imagePath, description, duration);
         this.timesByDate = new HashMap<>();
         this.hallsByDate = new HashMap<>();
@@ -46,4 +46,6 @@ public class MovieDetails extends Movie {
     public void setFormat(String format) {
         this.format = format;
     }
+
+
 }

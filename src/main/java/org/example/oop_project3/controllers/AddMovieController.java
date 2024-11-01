@@ -3,7 +3,13 @@ package org.example.oop_project3.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import org.example.oop_project3.dao.MovieDao;
 import org.example.oop_project3.models.MovieDetails;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class AddMovieController {
     @FXML
@@ -13,17 +19,22 @@ public class AddMovieController {
     @FXML
     private ComboBox<String> formatComboBox;
     @FXML
-    private Button addButton;
-    @FXML
     private Label statusLabel;
+    @FXML
+    private TextField dateField, timeField, hallField;
+    @FXML
+    private TextArea scheduleDisplay;
+    @FXML
+    private Button addScheduleButton;
+    private Map<String, List<String>> timesByDate = new HashMap<>();
+    private Map<String, List<String>> hallsByDate = new HashMap<>();
 
     private Stage stage;
     private HomeController homeController;
     public AddMovieController() {
     }
-    public AddMovieController(HomeController homeController, Stage stage) {
+    public void setHomeController(HomeController homeController) {
         this.homeController = homeController;
-        this.stage = stage;
     }
 
     @FXML
@@ -31,6 +42,35 @@ public class AddMovieController {
         formatComboBox.getItems().addAll("2D", "3D");
     }
 
+
+    @FXML
+    private void handleAddSchedule() {
+        String date = dateField.getText();
+        String time = timeField.getText();
+        String hall = hallField.getText();
+
+        if (!date.isEmpty() && !time.isEmpty() && !hall.isEmpty()) {
+            timesByDate.computeIfAbsent(date, k -> new ArrayList<>()).add(time);
+            hallsByDate.computeIfAbsent(date, k -> new ArrayList<>()).add(hall);
+
+            StringBuilder scheduleText = new StringBuilder();
+            for (String d : timesByDate.keySet()) {
+                scheduleText.append("Date: ").append(d).append("\n");
+                List<String> times = timesByDate.get(d);
+                List<String> halls = hallsByDate.get(d);
+                for (int i = 0; i < times.size(); i++) {
+                    scheduleText.append("   ").append(times.get(i)).append(" in ").append(halls.get(i)).append("\n");
+                }
+            }
+            scheduleDisplay.setText(scheduleText.toString());
+
+            dateField.clear();
+            timeField.clear();
+            hallField.clear();
+        } else {
+            statusLabel.setText("Please fill all schedule fields.");
+        }
+    }
     @FXML
     private void handleAddButton() {
         try {
@@ -42,23 +82,20 @@ public class AddMovieController {
             int duration = Integer.parseInt(durationField.getText());
             String format = formatComboBox.getValue();
 
-            if (title.isEmpty() || genre.isEmpty() || releaseDate.isEmpty() || imagePath.isEmpty() || description.isEmpty() || format == null) {
-                statusLabel.setText("Please fill in all fields.");
-                statusLabel.setStyle("-fx-text-fill: red;");
-                return;
+            MovieDetails newMovie = new MovieDetails(title, genre, releaseDate, imagePath, description, duration, format);
+            for (String date : timesByDate.keySet()) {
+                newMovie.addSchedule(date, timesByDate.get(date), hallsByDate.get(date));
             }
 
-            MovieDetails newMovie = new MovieDetails(title, genre, releaseDate, imagePath, description, duration, format);
-
-
+            MovieDao.saveMovie(newMovie);
+            homeController.refreshMovies();
             statusLabel.setText("Movie added successfully!");
             statusLabel.setStyle("-fx-text-fill: green;");
-
             stage.close();
-
-        } catch (NumberFormatException e) {
-            statusLabel.setText("Invalid duration. Please enter a number.");
-            statusLabel.setStyle("-fx-text-fill: red;");
+        } catch (Exception e) {
+            e.printStackTrace();
+            statusLabel.setText("Failed to add movie.");
         }
     }
+
 }

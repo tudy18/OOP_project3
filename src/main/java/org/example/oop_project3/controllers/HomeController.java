@@ -1,20 +1,28 @@
 
 package org.example.oop_project3.controllers;
-
+import java.sql.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.oop_project3.models.MovieDetails;
-import org.example.oop_project3.models.User;
-
+import org.example.oop_project3.utils.dbConnection;
+import javafx.scene.image.ImageView;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Arrays;
 import java.util.List;
 public class HomeController {
@@ -23,55 +31,43 @@ public class HomeController {
     private ObservableList<MovieDetails> movieList;
 
     public HomeController() {
-        movieList = FXCollections.observableArrayList();
+      movieList = FXCollections.observableArrayList();
     }
 
     @FXML
     private void initialize() {
-        loadMovies();
+        movieListView.setCellFactory(listView -> new MovieCellController());
+
+        refreshMovies();
         setupListViewActions();
     }
 
-    private void loadMovies() {
+    public void refreshMovies() {
         movieList.clear();
-        List<MovieDetails> movies = Arrays.asList(
-                new MovieDetails("Inception", "Sci-Fi", "2010", "/images/inception.jpg", "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.", 120, "2D"),
-                new MovieDetails("The Matrix", "Action", "1999", "/images/the_matrix.jpg", "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.", 150, "2D"),
-                new MovieDetails("Interstellar", "Sci-Fi", "2014", "/images/interstellar.jpg", "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.", 169, "3D"),
-                new MovieDetails("The Godfather", "Crime", "1972", "/images/the_godfather.jpg", "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.", 175, "2D"),
-                new MovieDetails("Pulp Fiction", "Crime", "1994", "/images/pulp_fiction.jpg", "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.", 154, "2D")
-        );
+        String query = "SELECT title, genre, release_date, duration, image_path, description, format FROM movies";
 
-        movies.get(0).addSchedule("2024-11-01", List.of("10:00 AM", "1:00 PM", "6:00 PM"), List.of("1", "2", "3"));
-        movies.get(0).addSchedule("2024-11-02", List.of("11:00 AM", "2:00 PM", "8:00 PM"), List.of("1", "3", "2"));
+        try (Connection conn = new dbConnection().connectToDatabase();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
 
-        movies.get(1).addSchedule("2024-11-01", List.of("12:00 PM", "3:00 PM", "8:00 PM"), List.of("1", "2", "4"));
-        movies.get(1).addSchedule("2024-11-03", List.of("1:00 PM", "4:00 PM", "9:00 PM"), List.of("3", "2", "1"));
-
-        movies.get(2).addSchedule("2024-11-01", List.of("2:00 PM", "5:00 PM", "9:00 PM"), List.of("3", "1", "2"));
-        movies.get(2).addSchedule("2024-11-04", List.of("12:30 PM", "6:00 PM", "8:30 PM"), List.of("2", "3", "1"));
-
-        movies.get(3).addSchedule("2024-11-02", List.of("11:00 AM", "4:00 PM", "7:00 PM"), List.of("2", "3", "1"));
-        movies.get(3).addSchedule("2024-11-05", List.of("3:00 PM", "6:00 PM", "10:00 PM"), List.of("1", "2", "4"));
-
-        movies.get(4).addSchedule("2024-11-03", List.of("1:30 PM", "6:30 PM", "9:30 PM"), List.of("1", "2", "3"));
-        movies.get(4).addSchedule("2024-11-06", List.of("12:00 PM", "5:00 PM", "8:00 PM"), List.of("2", "1", "3"));
-
-        movieList.addAll(movies);
-        movieListView.setItems(movieList);
-        setupListViewActions();
-        movieListView.setCellFactory(param -> new ListCell<MovieDetails>() {
-            @Override
-            protected void updateItem(MovieDetails movie, boolean empty) {
-                super.updateItem(movie, empty);
-                if (empty || movie == null || movie.getTitle() == null) {
-                    setText(null);
-                } else {
-                    setText(movie.getTitle());
-                }
+            while (rs.next()) {
+                MovieDetails movie = new MovieDetails(
+                        rs.getString("title"),
+                        rs.getString("genre"),
+                        rs.getDate("release_date").toString(),
+                        rs.getString("image_path"),
+                        rs.getString("description"),
+                        rs.getInt("duration"),
+                        rs.getString("format")
+                );
+                movieList.add(movie);
             }
-        });
+            movieListView.setItems(movieList);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
+
 
     private void setupListViewActions() {
         movieListView.setOnMouseClicked(event -> {
@@ -106,6 +102,7 @@ public class HomeController {
             Parent root = loader.load();
             Stage stage = new Stage();
             AddMovieController controller = new AddMovieController();
+            controller.setHomeController(this);
             loader.setController(controller);
 
 
@@ -113,6 +110,57 @@ public class HomeController {
             stage.show();
 
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void insertMoviesWithSchedules(List<MovieDetails> movies) {
+        String movieInsertQuery = "INSERT INTO movies (title, genre, release_date, image, description, duration, format) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String scheduleInsertQuery = "INSERT INTO schedules (movie_id, schedule_date, show_time, screen_number) VALUES (?, ?, ?, ?)";
+
+        try (Connection conn = new dbConnection().connectToDatabase()) {
+            conn.setAutoCommit(false);
+
+            for (MovieDetails movie : movies) {
+                try (PreparedStatement movieStmt = conn.prepareStatement(movieInsertQuery, Statement.RETURN_GENERATED_KEYS)) {
+                    movieStmt.setString(1, movie.getTitle());
+                    movieStmt.setString(2, movie.getGenre());
+                    movieStmt.setString(3, movie.getReleaseDate());
+
+                    // Assuming the image path is stored in MovieDetails and you have access to it.
+                    byte[] imageBytes = Files.readAllBytes(Paths.get(movie.getImagePath()));
+                    movieStmt.setBytes(4, imageBytes);
+
+                    movieStmt.setString(5, movie.getDescription());
+                    movieStmt.setInt(6, movie.getDuration());
+                    movieStmt.setString(7, movie.getFormat());
+                    movieStmt.executeUpdate();
+
+                    ResultSet generatedKeys = movieStmt.getGeneratedKeys();
+                    int movieId = 0;
+                    if (generatedKeys.next()) {
+                        movieId = generatedKeys.getInt(1);
+                    }
+
+                    for (String date : movie.getTimesByDate().keySet()) {
+                        List<String> times = movie.getTimesForDate(date);
+                        List<String> halls = movie.getHallsForDate(date);
+
+                        for (int i = 0; i < times.size(); i++) {
+                            try (PreparedStatement scheduleStmt = conn.prepareStatement(scheduleInsertQuery)) {
+                                scheduleStmt.setInt(1, movieId);
+                                scheduleStmt.setDate(2, Date.valueOf(date));
+                                scheduleStmt.setTime(3, Time.valueOf(times.get(i)));
+                                scheduleStmt.setString(4, halls.get(i));
+                                scheduleStmt.executeUpdate();
+                            }
+                        }
+                    }
+                }
+            }
+
+            conn.commit();
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

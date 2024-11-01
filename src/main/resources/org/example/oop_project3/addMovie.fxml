@@ -9,43 +9,84 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="500" prefWidth="600" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.controllers.AddMovieController">
+<BorderPane prefHeight="481" prefWidth="665" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.controllers.AddMovieController">
 
+    <!-- Header Section -->
     <top>
-        <HBox alignment="CENTER" style="-fx-background-color: #D32F2F;">
+        <HBox alignment="CENTER" style="-fx-background-color: #D32F2F; -fx-padding: 10;">
             <Label style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;" text="Add Movie" />
         </HBox>
     </top>
 
+    <!-- Main Content Section -->
     <center>
-        <VBox spacing="10">
-            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Title:" />
-            <TextField fx:id="titleField" />
+        <VBox spacing="12" alignment="CENTER_LEFT" style="-fx-padding: 20;">
+            <!-- Title and Genre -->
+            <HBox spacing="20">
+                <VBox spacing="2">
+                    <Label style="-fx-font-size: 12; -fx-font-weight: bold;" text="Title:" />
+                    <TextField fx:id="titleField" prefWidth="140"/>
+                </VBox>
+                <VBox spacing="2">
+                    <Label style="-fx-font-size: 12; -fx-font-weight: bold;" text="Genre:" />
+                    <TextField fx:id="genreField" prefWidth="140"/>
+                </VBox>
+            </HBox>
 
-            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Genre:" />
-            <TextField fx:id="genreField" />
+            <!-- Release Date and Duration -->
+            <HBox spacing="20">
+                <VBox spacing="2">
+                    <Label style="-fx-font-size: 12; -fx-font-weight: bold;" text="Release Date:" />
+                    <TextField fx:id="releaseDateField" promptText="YYYY-MM-DD" prefWidth="140"/>
+                </VBox>
+                <VBox spacing="2">
+                    <Label style="-fx-font-size: 12; -fx-font-weight: bold;" text="Duration (minutes):" />
+                    <TextField fx:id="durationField" prefWidth="140"/>
+                </VBox>
+            </HBox>
 
-            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Release Date:" />
-            <TextField fx:id="releaseDateField" />
+            <!-- Image Path and Format -->
+            <HBox spacing="20">
+                <VBox spacing="2">
+                    <Label style="-fx-font-size: 12; -fx-font-weight: bold;" text="Image Path:" />
+                    <TextField fx:id="imagePathField" prefWidth="140"/>
+                </VBox>
+                <VBox spacing="2">
+                    <Label style="-fx-font-size: 12; -fx-font-weight: bold;" text="Format:" />
+                    <ComboBox fx:id="formatComboBox" prefWidth="140" />
+                </VBox>
+            </HBox>
 
-            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Image Path:" />
-            <TextField fx:id="imagePathField" />
-
+            <!-- Description -->
             <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Description:" />
-            <TextArea fx:id="descriptionArea" wrapText="true" />
+            <TextArea fx:id="descriptionArea" wrapText="true" prefWidth="300" prefHeight="70" />
 
-            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Duration (minutes):" />
-            <TextField fx:id="durationField" />
+            <!-- Schedule Section -->
+            <Label style="-fx-font-size: 12; -fx-font-weight: bold;" text="Schedule:" />
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Date:" style="-fx-font-size: 12; -fx-font-weight: bold;" />
+                <TextField fx:id="dateField" promptText="YYYY-MM-DD" prefWidth="100"/>
 
-            <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Format:" />
-            <ComboBox fx:id="formatComboBox" />
+                <Label text="Time:" style="-fx-font-size: 12; -fx-font-weight: bold;" />
+                <TextField fx:id="timeField" promptText="HH:MM AM/PM" prefWidth="80"/>
 
-            <Button fx:id="addButton" text="Add Movie" style="-fx-background-color: #D32F2F; -fx-text-fill: white;" onAction="#handleAddButton" />
+                <Label text="Hall:" style="-fx-font-size: 12; -fx-font-weight: bold;" />
+                <TextField fx:id="hallField" prefWidth="80"/>
+            </HBox>
+
+            <!-- Add Schedule Button -->
+            <Button fx:id="addScheduleButton" text="Add Schedule" style="-fx-background-color: #D32F2F; -fx-text-fill: white;" onAction="#handleAddSchedule" />
+            <TextArea fx:id="scheduleDisplay" wrapText="true" editable="false" promptText="Schedule details will appear here" prefHeight="60" prefWidth="300"/>
+
+            <!-- Add Movie Button -->
+            <Button fx:id="addButton" text="Add Movie" style="-fx-background-color: #D32F2F; -fx-text-fill: white;" onAction="#handleAddButton" prefWidth="300"/>
+
         </VBox>
     </center>
 
+    <!-- Status Label at the Bottom -->
     <bottom>
-        <HBox alignment="CENTER" style="-fx-background-color: #D32F2F;">
+        <HBox alignment="CENTER" style="-fx-background-color: #D32F2F; -fx-padding: 10;">
             <Label fx:id="statusLabel" style="-fx-text-fill: green;" />
         </HBox>
     </bottom>
