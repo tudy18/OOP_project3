@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<BorderPane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.oop_project3.controllers.SeatSelectionController">
 
     <top>
         <HBox alignment="CENTER" prefHeight="70.0" style="-fx-background-color: #D32F2F; -fx-padding: 15;">
@@ -26,7 +26,7 @@
                 <Rectangle arcHeight="30" arcWidth="30" height="15" style="-fx-fill: #888888;" width="500" />
                 <Label alignment="CENTER" prefHeight="27.0" prefWidth="500.0" style="-fx-font-size: 18px; -fx-text-fill: white;" text="ECRAN" />
 
-                <GridPane hgap="10" style="-fx-padding: 20; -fx-background-color: #333333; -fx-border-radius: 10; -fx-background-radius: 10;" vgap="10">
+                <GridPane fx:id="seatGrid" hgap="10" style="-fx-padding: 20; -fx-background-color: #333333; -fx-border-radius: 10; -fx-background-radius: 10;" vgap="10">
 
                     <Label style="-fx-font-size: 16px; -fx-text-fill: white;" text="A" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                     <Label style="-fx-font-size: 16px; -fx-text-fill: white;" text="B" GridPane.columnIndex="0" GridPane.rowIndex="2" />
@@ -38,113 +38,108 @@
                     <Label style="-fx-font-size: 16px; -fx-text-fill: white;" text="I" GridPane.rowIndex="9" />
                     <Label style="-fx-font-size: 16px; -fx-text-fill: white;" text="J" GridPane.rowIndex="10" />
 
+                    <Button fx:id="seatA1" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                    <Button fx:id="seatA2" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                    <Button fx:id="seatA3" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                    <Button fx:id="seatA4" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                    <Button fx:id="seatA5" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                    <Button fx:id="seatA6" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                    <Button fx:id="seatA7" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                    <Button fx:id="seatA8" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+                    <Button fx:id="seatA9" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+                    <Button fx:id="seatA10" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="1" />
+                    <Button fx:id="seatB1" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                    <Button fx:id="seatC1" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                    <Button fx:id="seatD1" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                    <Button fx:id="seatE1" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                    <Button fx:id="seatB2" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                    <Button fx:id="seatC2" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                    <Button fx:id="seatD2" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                    <Button fx:id="seatE2" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                    <Button fx:id="seatB3" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                    <Button fx:id="seatC3" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                    <Button fx:id="seatD3" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                    <Button fx:id="seatE3" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                    <Button fx:id="seatB4" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                    <Button fx:id="seatC4" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                    <Button fx:id="seatD4" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                    <Button fx:id="seatE4" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                    <Button fx:id="seatB5" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                    <Button fx:id="seatC5" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                    <Button fx:id="seatD5" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                    <Button fx:id="seatE5" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                    <Button fx:id="seatB6" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                    <Button fx:id="seatB7" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                    <Button fx:id="seatB8" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                    <Button fx:id="seatB9" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+                    <Button fx:id="seatB10" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="2" />
+                    <Button fx:id="seatC6" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                    <Button fx:id="seatC7" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+                    <Button fx:id="seatC8" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+                    <Button fx:id="seatC9" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="3" />
+                    <Button fx:id="seatC10" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="3" />
+                    <Button fx:id="seatD6" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                    <Button fx:id="seatD7" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+                    <Button fx:id="seatD8" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+                    <Button fx:id="seatD9" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="4" />
+                    <Button fx:id="seatD10" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="4" />
+                    <Button fx:id="seatE6" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                    <Button fx:id="seatE7" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+                    <Button fx:id="seatE8" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="5" />
+                    <Button fx:id="seatE9" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="5" />
+                    <Button fx:id="seatE10" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="5" />
+                    <Button fx:id="seatF1" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                    <Button fx:id="seatF2" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                    <Button fx:id="seatF3" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                    <Button fx:id="seatF4" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                    <Button fx:id="seatF5" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                    <Button fx:id="seatF6" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                    <Button fx:id="seatF7" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+                    <Button fx:id="seatF8" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="6" />
+                    <Button fx:id="seatF9" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="6" />
+                    <Button fx:id="seatF10" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="6" />
+                    <Button fx:id="seatG1" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                    <Button fx:id="seatG2" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                    <Button fx:id="seatG3" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                    <Button fx:id="seatG4" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                    <Button fx:id="seatG5" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                    <Button fx:id="seatG6" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+                    <Button fx:id="seatG7" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="7" />
+                    <Button fx:id="seatG8" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="7" />
+                    <Button fx:id="seatG9" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="7" />
+                    <Button fx:id="seatG10" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="7" />
+                    <Button fx:id="seatH1" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                    <Button fx:id="seatH2" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                    <Button fx:id="seatH3" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                    <Button fx:id="seatH4" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                    <Button fx:id="seatH5" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+                    <Button fx:id="seatH6" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+                    <Button fx:id="seatH7" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+                    <Button fx:id="seatH8" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+                    <Button fx:id="seatH9" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="8" />
+                    <Button fx:id="seatH10" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="8" />
+                    <Button fx:id="seatI1" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                    <Button fx:id="seatI2" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                    <Button fx:id="seatI3" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                    <Button fx:id="seatI4" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                    <Button fx:id="seatI5" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+                    <Button fx:id="seatI6" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+                    <Button fx:id="seatI7" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+                    <Button fx:id="seatI8" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="9" />
+                    <Button fx:id="seatI9" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="9" />
+                    <Button fx:id="seatI10" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="9" />
+                    <Button fx:id="seatJ1" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                    <Button fx:id="seatJ2" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                    <Button fx:id="seatJ3" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                    <Button fx:id="seatJ4" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                    <Button fx:id="seatJ5" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+                    <Button fx:id="seatJ6" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+                    <Button fx:id="seatJ7" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="10" />
+                    <Button fx:id="seatJ8" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="10" />
+                    <Button fx:id="seatJ9" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="10" />
+                    <Button fx:id="seatJ10" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="10" />
 
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="1" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="1" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="1" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="2" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="3" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="3" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="3" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="3" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="4" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="4" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="4" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="4" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="5" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="5" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="5" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="5" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="6" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="6" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="6" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="6" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="7" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="7" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="7" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="7" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="8" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="8" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="8" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="8" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="8" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="8" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="9" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="9" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="9" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="9" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="9" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="9" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="3" GridPane.rowIndex="10" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="4" GridPane.rowIndex="10" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="5" GridPane.rowIndex="10" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="7" GridPane.rowIndex="10" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="6" GridPane.rowIndex="10" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="8" GridPane.rowIndex="10" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="9" GridPane.rowIndex="10" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="10" GridPane.rowIndex="10" />
-                    <Button prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.columnIndex="11" GridPane.rowIndex="10" />
-               <Label style="-fx-font-size: 16px; -fx-text-fill: white;" text="H" GridPane.rowIndex="8" />
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: white;" text="H" GridPane.rowIndex="8" />
 
                 </GridPane>
             </VBox>
@@ -157,7 +152,7 @@
                 <Label style="-fx-font-size: 12px; -fx-text-fill: white;" text="Rating: AP12" />
                 <Label style="-fx-font-size: 12px; -fx-text-fill: white;" text="Mâine, 17:20" />
 
-                <Button disable="true" style="-fx-background-color: grey; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-border-radius: 8;" text="PASUL URMĂTOR" />
+                <Button fx:id="nextStepButton" text="PASUL URMĂTOR" style="-fx-background-color: grey; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8;" onAction="#handleNextStep" disable="true" />
             </VBox>
         </HBox>
     </center>

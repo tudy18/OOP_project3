@@ -8,19 +8,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class User {
-
-    private String username;
+    private static String username;
     private String password;
     private String email;
-    private int userId;
-    private String role;
-
-    public User(String username, String password, String email, String role)
+    public User(String username, String password, String email)
     {
-        this.username=username;
+        User.username=username;
         this.password=password;
         this.email=email;
-        this.role=role;
     }
 
     public String getPassword() {
@@ -35,11 +30,11 @@ public class User {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public static void setUsername(String username) {
+        User.username = username;
     }
 
-    public void setRole(String role){this.role = role;}
-
-    public String getRole(){return role;}
+    public String getEmail() {
+        return email;
+    }
 }

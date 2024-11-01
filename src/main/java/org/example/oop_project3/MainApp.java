@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.stage.Stage;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -21,9 +22,9 @@ public class MainApp extends Application {
             Logout(stage);
         });
 
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/org/example/oop_project3/reservationConfirmation.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/org/example/oop_project3/login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Workout Tracker");
+        stage.setTitle("MovieStar");
         stage.setScene(scene);
         stage.show();
     }
