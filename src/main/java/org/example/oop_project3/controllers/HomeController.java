@@ -16,7 +16,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.oop_project3.models.MovieDetails;
-import org.example.oop_project3.utils.dbConnection;
+import org.example.oop_project3.utils.DatabaseConnection;
 import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.sql.Connection;
@@ -46,7 +46,7 @@ public class HomeController {
         movieList.clear();
         String query = "SELECT title, genre, release_date, duration, image_path, description, format FROM movies";
 
-        try (Connection conn = new dbConnection().connectToDatabase();
+        try (Connection conn = new DatabaseConnection().connectToDatabase();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
 
@@ -117,7 +117,7 @@ public class HomeController {
         String movieInsertQuery = "INSERT INTO movies (title, genre, release_date, image, description, duration, format) VALUES (?, ?, ?, ?, ?, ?, ?)";
         String scheduleInsertQuery = "INSERT INTO schedules (movie_id, schedule_date, show_time, screen_number) VALUES (?, ?, ?, ?)";
 
-        try (Connection conn = new dbConnection().connectToDatabase()) {
+        try (Connection conn = new DatabaseConnection().connectToDatabase()) {
             conn.setAutoCommit(false);
 
             for (MovieDetails movie : movies) {
@@ -126,7 +126,6 @@ public class HomeController {
                     movieStmt.setString(2, movie.getGenre());
                     movieStmt.setString(3, movie.getReleaseDate());
 
-                    // Assuming the image path is stored in MovieDetails and you have access to it.
                     byte[] imageBytes = Files.readAllBytes(Paths.get(movie.getImagePath()));
                     movieStmt.setBytes(4, imageBytes);
 

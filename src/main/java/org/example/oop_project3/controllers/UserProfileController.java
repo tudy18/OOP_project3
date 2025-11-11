@@ -30,27 +30,18 @@ public class UserProfileController {
 
     private User user;
 
-    // Initializes with user data
     public void initData(User user) {
         this.user = user;
         loadUserData();
     }
 
     private void loadUserData() {
-        // Assuming User has getters for these fields or methods to split into labels
         fullNameLabel.setText(user.getUsername());
         emailLabel.setText(user.getEmail());
-        // Other data as per user object fields
-        // surnameLabel.setText(user.getSurname());
-        // birthDateLabel.setText(user.getBirthDate());
-        // genderLabel.setText(user.getGender());
-        // countyLabel.setText(user.getCounty());
-        // cityLabel.setText(user.getCity());
     }
 
     @FXML
     private void handleLogOut() {
-        // Close this stage
         Stage stage = (Stage) fullNameLabel.getScene().getWindow();
         stage.close();
     }

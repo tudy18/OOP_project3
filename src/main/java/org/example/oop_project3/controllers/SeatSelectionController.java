@@ -40,7 +40,7 @@ public class SeatSelectionController {
         this.time = time;
         this.hall = hall;
         this.format = format;
-        nextStepButton.setDisable(true);  // Disable until required seats are selected
+        nextStepButton.setDisable(true);
         loadSeats();
     }
 
@@ -77,7 +77,6 @@ public class SeatSelectionController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/oop_project3/reservationConfirmation.fxml"));
             Parent root = loader.load();
 
-            // Get the controller and pass reservation details
             ReservationController reservationController = loader.getController();
             reservationController.setReservationDetails(movieTitle, hall, seatIds, date, time);
 

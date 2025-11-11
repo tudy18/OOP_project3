@@ -11,7 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.example.oop_project3.models.MovieDetails;
-import org.example.oop_project3.utils.dbConnection;
+import org.example.oop_project3.utils.DatabaseConnection;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -78,7 +78,7 @@ public class MovieDetailsController {
         String query = "SELECT schedule_date, show_time, screen_number FROM schedules s "
                 + "JOIN movies m ON s.movie_id = m.movie_id "
                 + "WHERE m.title = ?";
-        try (Connection connection = new dbConnection().connectToDatabase();
+        try (Connection connection = new DatabaseConnection().connectToDatabase();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, selectedMovie.getTitle());
@@ -96,12 +96,11 @@ public class MovieDetailsController {
                 hallsByDate.computeIfAbsent(date, k -> new ArrayList<>()).add(hall);
             }
 
-            // Add schedules to the selected movie
             for (String date : timesByDate.keySet()) {
                 selectedMovie.addSchedule(date, timesByDate.get(date), hallsByDate.get(date));
             }
 
-            loadScheduleButtons(); // Load buttons after schedules are fetched
+            loadScheduleButtons();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -122,7 +121,7 @@ public class MovieDetailsController {
                 List<String> halls = hallsByDate.get(date);
                 for (int i = 0; i < times.size(); i++) {
                     String time = times.get(i);
-                    String hall = halls.get(i);  // Get the corresponding hall for the time
+                    String hall = halls.get(i);
                     Button scheduleButton = new Button(time + " - Hall " + hall + " (" + selectedMovie.getFormat() + ")");
                     scheduleContainer.getChildren().add(scheduleButton);
                     scheduleButton.setOnAction(e -> handleScheduleButtonClick(date, time, hall, selectedMovie.getFormat()));

@@ -1,13 +1,10 @@
 package org.example.oop_project3.utils;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
-@SuppressWarnings("ALL")
-public class dbConnection {
+public class DatabaseConnection {
 
     private final String JDBC_URL = "jdbc:mysql://localhost:3306/movie";
     private final String USERNAME = "root";

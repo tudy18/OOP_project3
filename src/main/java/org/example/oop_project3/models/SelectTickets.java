@@ -8,7 +8,7 @@ public class SelectTickets
         private String movieName;
         private String cinemaName;
         private String hall;
-        private String format; // e.g., "2D" or "3D"
+        private String format;
         private String date;
         private String time;
 

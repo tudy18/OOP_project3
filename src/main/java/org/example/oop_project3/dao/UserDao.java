@@ -1,6 +1,6 @@
 package org.example.oop_project3.dao;
 
-import org.example.oop_project3.utils.dbConnection;
+import org.example.oop_project3.utils.DatabaseConnection;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Connection;
@@ -16,7 +16,7 @@ public class UserDao {
     ) {
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
         String query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-        try (Connection connection = new dbConnection().connectToDatabase();
+        try (Connection connection = new DatabaseConnection().connectToDatabase();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, username);
             statement.setString(2, email);
@@ -35,7 +35,7 @@ public class UserDao {
             String password
     ) {
         String query = "SELECT * FROM users WHERE username = ?";
-        try (Connection connection = new dbConnection().connectToDatabase();
+        try (Connection connection = new DatabaseConnection().connectToDatabase();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();

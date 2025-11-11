@@ -7,12 +7,12 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import org.example.oop_project3.utils.dbConnection;
+import org.example.oop_project3.utils.DatabaseConnection;
 public class MovieDao {
     public static void saveMovie(MovieDetails movie) {
         String query = "INSERT INTO movies (title, genre, release_date, duration, image_path) VALUES (?, ?, ?, ?, ?)";
 
-        try (Connection conn = new dbConnection().connectToDatabase();
+        try (Connection conn = new DatabaseConnection().connectToDatabase();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, movie.getTitle());
